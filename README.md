@@ -27,3 +27,5 @@ The following functions/examples exist in the repository:
 * NamedArguments.cpp - An example of how to emulate a function with named arguments in c++
 
 * Dictionary.h - compile-time fixed-size bi-directional map (dictionary) for integer types
+
+* arithmetic_comparison.h - safe (no implicit casting) arithmetical value comparison with no run time costs

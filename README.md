@@ -29,3 +29,5 @@ The following functions/examples exist in the repository:
 * Dictionary.h - compile-time fixed-size bi-directional map (dictionary) for integer types
 
 * arithmetic_comparison.h - safe (no implicit casting) arithmetical value comparison with no run time costs
+
+* expand_stl.h - extend many STL algorithms to operate on homogeneous parameter packs or a variadic amount of collections where each collection can be of a different type but must hold the same underlying type.

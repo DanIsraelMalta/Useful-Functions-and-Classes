@@ -1,5 +1,7 @@
 /**
-* Allow user to iterate a given collection either in SoA style or AoS style.
+* Define a container using AoS (array of struct) syntax (both construction and iteration)
+* but underneath it is an SoA (struct of array) object which allow iterating in SoA style.
+*
 * Example usage:
 *
 * ```c
@@ -46,6 +48,9 @@
 *       ++i;
 *   }
 * 
+*   // extract a continues array holding only y coordinate
+*   auto _y = Layout::array_view<Point::yid, decltype(vertexBuffer)>(vertexBuffer);
+*
 *   return 0;
 * }
 *
@@ -106,7 +111,7 @@ namespace tuple_utils {
 
 /**
 * a set of utilities that allow one to to handle (iterate/extract/interface) a container
-* both in 'Struct of Array' (SOA) and 'Array of Struct' (AOS) manners.
+* both in 'struct of array' (SOA) and 'array of struct' (AOS) manners.
 **/
 namespace Layout {
 
@@ -228,7 +233,7 @@ namespace Layout {
     };
 
     /**
-    * \brief SOA ("struct of array") container
+    * \brief SOA ("struct of array") container which allow iterating in AOS ("array of struct") manner
     * 
     * @param {in} underlying container
     * @param {in} struct held by container

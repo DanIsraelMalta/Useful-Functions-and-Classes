@@ -106,7 +106,7 @@ namespace tuple_utils {
     **/
     template<typename F, typename... Ts> constexpr void foreach(std::tuple<Ts...>& xi_tuple, const F& xi_function) {
         constexpr std::size_t last{ sizeof...(Ts) - 1 };
-		static_assert(last > 0, "tuple_utils::foreach can not operate on an empty tuple.");
+	static_assert(last > 0, "tuple_utils::foreach can not operate on an empty tuple.");
         impl::foreach<last>(xi_tuple, xi_function);
     }
 }

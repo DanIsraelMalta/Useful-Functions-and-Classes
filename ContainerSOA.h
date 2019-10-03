@@ -1,6 +1,6 @@
 /**
-* Define a container using AoS (array of struct) syntax (both construction and iteration)
-* but underneath it is an SoA (struct of array) object which allow iterating in SoA style.
+* Define a container using AoS (array of struct) syntax (both construction and iteration),
+* but underneath it is a SoA (struct of array) object which allow iterating in SoA style.
 *
 * Example usage:
 *
@@ -106,14 +106,14 @@ namespace tuple_utils {
     **/
     template<typename F, typename... Ts> constexpr void foreach(std::tuple<Ts...>& xi_tuple, const F& xi_function) {
         constexpr std::size_t last{ sizeof...(Ts) - 1 };
-	static_assert(last > 0, "tuple_utils::foreach can not operate on an empty tuple.");
+        static_assert(last > 0, "tuple_utils::foreach can not operate on an empty tuple.");
         impl::foreach<last>(xi_tuple, xi_function);
     }
 }
 
 /**
 * a set of utilities that allow one to to handle (iterate/extract/interface) a container
-* both in 'struct of array' (SOA) and 'array of struct' (AOS) manners.
+* both in 'structure of array' (SOA) and 'array of structures' (AOS) manners.
 **/
 namespace Layout {
 
@@ -165,11 +165,11 @@ namespace Layout {
             }
 
             constexpr bool operator==(const struct_iterator& other) const {
-                return iterators == other.iterators;
+                return (iterators == other.iterators);
             }
 
             constexpr bool operator!=(const struct_iterator& other) const {
-                return iterators != other.iterators;
+                return (iterators != other.iterators);
             }
 
         private:

@@ -33,3 +33,5 @@ The following functions/examples exist in the repository:
 * Dictionary.h - compile-time fixed-size bi-directional map (dictionary) for integer types
 
 * arithmetic_comparison.h - safe (no implicit casting) arithmetical value comparison with no run time costs
+
+* VectorConstructs.h - various (explicit) vectorized construct (requires SSE4.1 or above).
